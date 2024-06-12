@@ -1,2 +1,5 @@
 /HAM100000_metadata.csv
 /HAM10000_images/*
+images.npy
+HAM10000_metadata.csv
+HAM10000_metadata_base.csv
