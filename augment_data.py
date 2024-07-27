@@ -108,7 +108,23 @@ age = np.array(age)
 sex = np.array(sex)
 localization = np.array(localization)
 
+df = pd.DataFrame(
+    {
+        "image_id": images_id,
+        "dx": dx,
+        "dx_type": dx_type,
+        "lesion_id": lesion_id,
+        "age": age,
+    }
+)
 
+df.to_csv(
+    "/Users/anavbo/Desktop/Personal/ASDRP/HAM10000_metadata_augmented.csv",
+    index=False,
+)
+
+# Save the images
+np.save("augment_images", ordered_images)
 # Get the value counts of the data
 counts = np.unique(dx, return_counts=True)
 
