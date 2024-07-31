@@ -5,3 +5,5 @@ HAM10000_metadata.csv
 HAM10000_metadata_base.csv
 .DS_Store
 .gitignore
+augment_images.npy
+HAM10000_metadata_augmented.csv
