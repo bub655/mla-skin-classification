@@ -99,7 +99,7 @@ for index, row in metadata.iterrows():
     localization.append(row["localization"])
 
 # convert the array lists to a NumPy arrays
-ordered_images = np.asarray(ordered_images)
+# ordered_images = np.asarray(ordered_images)
 dx = np.array(dx)
 dx_type = np.array(dx_type)
 lesion_id = np.array(lesion_id)
@@ -114,7 +114,9 @@ df = pd.DataFrame(
         "dx": dx,
         "dx_type": dx_type,
         "lesion_id": lesion_id,
+        "sex": sex,
         "age": age,
+        "localization": localization,
     }
 )
 
@@ -123,22 +125,22 @@ df.to_csv(
     index=False,
 )
 
-# Save the images
-np.save("augment_images", ordered_images)
-# Get the value counts of the data
-counts = np.unique(dx, return_counts=True)
+# # Save the images
+# np.save("augment_images", ordered_images)
+# # Get the value counts of the data
+# counts = np.unique(dx, return_counts=True)
 
-# Create a bar chart of the value counts
-plt.bar(counts[0], counts[1])
+# # Create a bar chart of the value counts
+# plt.bar(counts[0], counts[1])
 
-# Add text annotations to the bars
-for i, v in enumerate(counts[1]):
-    plt.text(i, v, str(v), ha="center", va="bottom")
+# # Add text annotations to the bars
+# for i, v in enumerate(counts[1]):
+#     plt.text(i, v, str(v), ha="center", va="bottom")
 
-# Add labels and title
-plt.xlabel("Value")
-plt.ylabel("Count")
-plt.title("Value Count")
+# # Add labels and title
+# plt.xlabel("Value")
+# plt.ylabel("Count")
+# plt.title("Value Count")
 
-# Show the chart
-plt.show()
+# # Show the chart
+# plt.show()
