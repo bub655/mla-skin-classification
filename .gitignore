@@ -7,3 +7,4 @@ HAM10000_metadata_base.csv
 .gitignore
 augment_images.npy
 HAM10000_metadata_augmented.csv
+/tmp
